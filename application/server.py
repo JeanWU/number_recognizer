@@ -19,9 +19,23 @@ class PredictionHandler(BaseHandler):
     def post(self):
         resp = {"result": str(-1)}
         data = self.get_arguments("data[]")
+        new_number= self.get_arguments("new_number")
+        print(new_number)
 
         validated = Validator.validate_data(data)
         machine = MachineLoader.load(machines.number_recognizer)
+
+        with open('C:/number_recognizer/number_recognizer/data_text.txt','a') as thefile:
+            for item in validated:
+                thefile.write("%s" % item)
+            thefile.write("\n")
+
+        with open('C:/number_recognizer/number_recognizer/new_number.txt','a') as thefile:
+            for item in new_number:
+                thefile.write("%s" % item)
+            thefile.write("\n")
+
+
         if len(validated) > 0:
             predicted = machine.predict(validated)
             resp["result"] = str(predicted[0])

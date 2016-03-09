@@ -16,7 +16,8 @@ var Prediction = (function () {
         }
         var envelope = {
             _xsrf: getCookie("_xsrf"),
-            "data[]": data
+            "data[]": data,
+            "new_number":pre_number
         }
         return envelope;
     }
