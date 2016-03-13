@@ -14,17 +14,23 @@
 {% block body %}
 <div id="main" class="column-group gutters">
     <div align="left" class="all-100 canvas-area">
+      <p><H2>please enter this number: </H2></p>
+      <p><H2 id="number"></H2></p>
         <script type="text/javascript">
            var randomnumber;
            var pre_number;
+           $(document).ready(function(){
+             change_random();
+           })
             function change_random(){
               pre_number=randomnumber;
               randomnumber=Math.floor(Math.random()*10);
-              $("#numbertext").html("<H1>please enter this number:"+randomnumber + "</H1>");
+              document.getElementById("number").innerHTML=randomnumber;
+              //$("#numbertext").html("<H1>please enter this number:"+randomnumber + "</H1>");
             }
         </script>
     </div>
-    <div id="numbertext"></div>
+
     <div align="center" class="all-100 canvas-area">
         <div>
             <canvas id="canvas" width="170" height="170"></canvas>

@@ -25,12 +25,12 @@ class PredictionHandler(BaseHandler):
         validated = Validator.validate_data(data)
         machine = MachineLoader.load(machines.number_recognizer)
 
-        with open('C:/number_recognizer/number_recognizer/data_text.txt','a') as thefile:
+        with open('C:/git_number/number_recognizer/data_text.txt','a') as thefile:
             for item in validated:
                 thefile.write("%s" % item)
             thefile.write("\n")
 
-        with open('C:/number_recognizer/number_recognizer/new_number.txt','a') as thefile:
+        with open('C:/git_number/number_recognizer/new_number.txt','a') as thefile:
             for item in new_number:
                 thefile.write("%s" % item)
             thefile.write("\n")
