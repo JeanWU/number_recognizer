@@ -27,13 +27,14 @@ class PredictionHandler(BaseHandler):
 
         with open('C:/git_number/number_recognizer/data_text.txt','a') as thefile:
             for item in validated:
-                thefile.write("%s" % item)
-            thefile.write("\n")
+                thefile.write("%s\n" % item)
+            #thefile.write("\n")
+
 
         with open('C:/git_number/number_recognizer/new_number.txt','a') as thefile:
             for item in new_number:
-                thefile.write("%s" % item)
-            thefile.write("\n")
+                thefile.write("%s\n" % item)
+            #thefile.write("\n")
 
 
         if len(validated) > 0:
