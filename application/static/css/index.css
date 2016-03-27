@@ -5,16 +5,17 @@
 }
 #canvas{
     border: 1px solid silver;
-    background-color:white
+    background-color:white;
 }
 .btn-submit{
     width: 82px;
+    /*background-color: #AC3BFF;*/
 }
 .btn-clear{
     width: 82px;
 }
 .predicteds{
-    background-color:whitesmoke;
+    background-color:#8CFFFF;
 }
 .result {
     height: 120px;
