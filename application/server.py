@@ -25,7 +25,7 @@ class PredictionHandler(BaseHandler):
         validated = Validator.validate_data(data)
         machine = MachineLoader.load(machines.number_recognizer)
 
-        with open('C:/git_number/number_recognizer/data_text15.txt','a') as thefile:
+    '''    with open('C:/git_number/number_recognizer/data_text15.txt','a') as thefile:
             for item in validated:
                 thefile.write("%s\t" % item)
             thefile.write("\n")
@@ -35,7 +35,7 @@ class PredictionHandler(BaseHandler):
             for item in new_number:
                 thefile.write("%s\n" % item)
             #thefile.write("\n")
-
+'''
 
         if len(validated) > 0:
             predicted = machine.predict(validated)
