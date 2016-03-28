@@ -19,24 +19,9 @@ class PredictionHandler(BaseHandler):
     def post(self):
         resp = {"result": str(-1)}
         data = self.get_arguments("data[]")
-        new_number= self.get_arguments("new_number")
-        print(new_number)
 
         validated = Validator.validate_data(data)
         machine = MachineLoader.load(machines.number_recognizer)
-
-    '''    with open('C:/git_number/number_recognizer/data_text15.txt','a') as thefile:
-            for item in validated:
-                thefile.write("%s\t" % item)
-            thefile.write("\n")
-
-
-        with open('C:/git_number/number_recognizer/new_number15.txt','a') as thefile:
-            for item in new_number:
-                thefile.write("%s\n" % item)
-            #thefile.write("\n")
-'''
-
         if len(validated) > 0:
             predicted = machine.predict(validated)
             resp["result"] = str(predicted[0])
